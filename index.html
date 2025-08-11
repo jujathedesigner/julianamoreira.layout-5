@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout #4 - Juliana Moreira</title>
+    <title>Layout #5 - Juliana Moreira</title>
     <style>
         /* CSS styles for the page */
         body {
@@ -121,7 +121,7 @@
         }
         
         /* Container for parallel content blocks */
-        .blocos-paralelos {
+        .parallel-blocks {
             /* Makes it a flex container */
             display: flex;
             /* Adds a gap between items */
@@ -132,7 +132,7 @@
             height: 100%;
         }
 
-        .coluna-blocos {
+        .column-blocks {
             /* Makes this a flex container */
             display: flex;
             /* Stacks items vertically */
@@ -145,24 +145,24 @@
             gap: 20px;
         }
 
-        .bloco-conteudo-1 {
+        .content-block-1 {
             /* Sets a specific width for this block */
             width: 15%;
         }
 
-        .bloco-conteudo-2 {
+        .content-block-2 {
             /* Sets a specific width for this block */
             width: 40%;
         }
 
-        .bloco-conteudo-3 {
+        .content-block-3 {
             /* Sets width to 100% of the parent */
             width: 100%;
             /* Calculates height for even vertical distribution */
             height: calc(50% - 10px);
         }
         
-        .bloco-conteudo-4 {
+        .content-block-4 {
             /* Sets width to 100% of the parent */
             width: 100%;
             /* Calculates height for even vertical distribution */
@@ -170,10 +170,10 @@
         }
 
         /* Styles for all images inside the content blocks */
-        .bloco-conteudo-1 img,
-        .bloco-conteudo-2 img,
-        .bloco-conteudo-3 img,
-        .bloco-conteudo-4 img {
+        .content-block-1 img,
+        .content-block-2 img,
+        .content-block-3 img,
+        .content-block-4 img {
             /* Ensures image fills the width of its container */
             width: 100%;
             /* Ensures image fills the height of its container */
@@ -184,61 +184,82 @@
             display: block;
         }
         
-/* ----- Media Query for Mobile and Small Screens ----- */
+        /* ----- Media Query for Tablet and Small Screens ----- */
         @media (max-width: 768px) {
             /* This section applies styles only when the screen width is 768px or less. */
             
             .site-header {
-            /* Changes the header to a row layout to place the logo and menu side by side. */
-            flex-direction: row;
-            /* Places the logo at the start and the menu at the end of the container. */
-            justify-content: space-between;
-            /* Vertically centers the logo and menu. */
-            align-items: center;
-            /* Adds a gap between the header items. */
-            gap: 10px;
-        }
+                /* Changes the header to a row layout to place the logo and menu side by side. */
+                flex-direction: row;
+                /* Places the logo at the start and the menu at the end of the container. */
+                justify-content: space-between;
+                /* Vertically centers the logo and menu. */
+                align-items: center;
+                /* Adds a gap between the header items. */
+                gap: 10px;
+            }
 
             .logo-area {
-                /* Sets the logo width to 50% of its parent. */
-            width: 45%;
+                /* Sets the logo width to 45% of its parent. */
+                width: 45%;
+                /* Aligns the logo to the start (left) of the container. */
                 align-self: flex-start;
             }
 
             .main-nav {
-            /* Allows menu items to wrap to the next line. */
-            flex-wrap: wrap;
-            /* Adds a gap between the menu items, both horizontally and vertically. */
-            gap: 10px;
-            /* Aligns items to the end (right) of the container. This pushes the menu to the right side. */
-            justify-content: flex-end;
-            /* Removes the padding of the main-nav to better use the space on mobile. */
-            padding: 0;
-        }
+                /* Allows menu items to wrap to the next line. */
+                flex-wrap: wrap;
+                /* Adds a gap between the menu items, both horizontally and vertically. */
+                gap: 10px;
+                /* Aligns items to the end (right) of the container. This pushes the menu to the right side. */
+                justify-content: flex-end;
+                /* Removes the padding of the main-nav to better use the space on mobile. */
+                padding: 0;
+            }
+            
             .menu-item {
-            /* Sets a minimum height for the menu items. */
-            min-height: 10px;
-            /* Adjusts internal padding to reduce the size. */
-            padding: 4px 10px; 
-            /* Ensures no extra margin from the desktop styles. */
-            margin: 0;
-            /* Sets each item to be half the width of the container minus half the gap, creating a perfect 2-column grid with uniform spacing. */
-            width: calc(20% - 5px);
+                /* Sets a minimum height for the menu items. */
+                min-height: 10px;
+                /* Adjusts internal padding to reduce the size. */
+                padding: 4px 10px;
+                /* Ensures no extra margin from the desktop styles. */
+                margin: 0;
+                /* Sets each item to be half the width of the container minus half the gap, creating a perfect 2-column grid with uniform spacing. */
+                width: calc(20% - 5px);
+            }
         }
         
-        /* ----- Media Query for Mobile and Small Screens ----- */
-            @media (max-width: 320px) {
-            /* This section applies styles only when the screen width is 768px or less. */
-            
-        .logo-area {
-            /* Sets the logo width to 45% of its parent. */
-            width: 45%;
-            /* Adds a bottom padding equal to its width to create a perfect square shape. */
-            padding-bottom: 45%;
-            /* Aligns the logo to the start (left) of the container. */
-            align-self: flex-start;
-            /* Removes fixed height, now determined by padding. */
-            height: auto;
+        /* ----- Media Query for Mobile and Very Small Screens ----- */
+        @media (max-width: 400px) {
+            /* This section applies styles only when the screen width is 400px or less. */
+        
+            .section-header,
+            .section-1,
+            .section-2 {
+                /* Adds internal padding */
+                padding: 15px;
+            }
+        
+            .logo-area {
+                /* Sets the logo width to 50% of its parent. */
+                width: 50%;
+                /* Adds a bottom padding to fix hape. */
+                padding-bottom: 35%;
+                /* Aligns the logo to the start (left) of the container. */
+                align-self: flex-start;
+                /* Removes fixed height, now determined by padding. */
+                height: auto;
+            }
+        
+            .parallel-blocks {
+                /* Adds a gap between items */
+                gap: 15px;
+            }
+
+            .column-blocks {
+                /* Adds a gap between items */
+                gap: 15px;
+            }
         }
     </style>
 </head>
@@ -252,29 +273,29 @@
                     <div class="menu-item">✷</div>
                     <div class="menu-item">✸</div>
                     <div class="menu-item">✵</div>
-                    </nav>
+                </nav>
             </header>
         </section>
         <section class="section-1">
-            <div class="blocos-paralelos">
-                <div class="bloco-conteudo-1">
+            <div class="parallel-blocks">
+                <div class="content-block-1">
                     <img src="https://i.pinimg.com/1200x/95/84/ae/9584aeca53f09b471ba657098d7cf33c.jpg" alt="Imagem Placeholder 1">
-                    </div>
-                <div class="bloco-conteudo-2">
+                </div>
+                <div class="content-block-2">
                     <img src="https://i.pinimg.com/1200x/95/4d/57/954d5790a213d593e4898f1c5680e205.jpg" alt="Imagem Placeholder 2">
-                    </div>
+                </div>
                 
-                <div class="coluna-blocos">
-                    <div class="bloco-conteudo-3">
+                <div class="column-blocks">
+                    <div class="content-block-3">
                         <img src="https://i.pinimg.com/1200x/aa/02/b2/aa02b2b469c26910f067d8d4a8452318.jpg" alt="Imagem Placeholder 3">
-                        </div>
-                    <div class="bloco-conteudo-4">
+                    </div>
+                    <div class="content-block-4">
                         <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTI5MXUyeDdncWh1eHYwNm0xOHMzc3RkdjI5eXBlYTBkZHlpd254MSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oz8xUfSPQSFBJrq8g/giphy.gif" alt="Imagem Placeholder 4">
-                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="section-2"></section>
-        </div>
+    </div>
 </body>
 </html>
